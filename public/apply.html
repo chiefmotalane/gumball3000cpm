@@ -1,0 +1,106 @@
+<!doctype html><html>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Apply — CPM</title>
+    <link rel="stylesheet" href="styles.css"></head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="brand">
+        <div class="logo">CPM</div>
+        <div>
+          <div style="font-weight:700">CPM Gumball3000</div>
+          <div class="small">est. 2023</div>
+        </div>
+      </div>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="cars.html">Hypercars</a>
+        <a href="apply.html">Apply</a>
+        <a href="apply.html#rules">Rules</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container" style="padding-top:100px">
+    <h1>Apply for Space</h1>
+    <div class="grid">
+      <div>
+        <div class="panel">
+          <form id="applyForm">
+            <label>Instagram handle<input id="ig" required placeholder="@yourhandle"></label>
+            <label>Car model<input id="car_model" required placeholder="Bugatti Tourbillon — Matte black"></label>
+            <label>Color<input id="car_color" placeholder="Matte black"></label>
+            <label>Preferred number (leave blank to auto assign)<input id="req_num" type="number" min="0"></label>
+            <div class="small">Reserved numbers: 1 and 63</div>
+            <label>Sponsor name<input id="sponsor" required></label>
+            <label><input type="checkbox" id="agree"> I agree to rules and will share announcements</label>
+            <div style="margin-top:12px">
+              <button class="btn" type="button" id="checkNum">Check number</button>
+              <button class="btn primary" type="submit">Submit</button>
+            </div>
+            <div id="result" style="margin-top:12px"></div>
+          </form>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3>Rules quick view</h3>
+          <ul class="small">
+            <li>Hypercars only. Minimum 2 days attendance.</li>
+            <li>Drive in cockpit view — screenshot may be requested.</li>
+            <li>Follow leader, wait for designated fuel stops, no glitch designs etc.</li>
+          </ul>
+          <h4>In-game events</h4>
+          <ul class="small"><li>Auctions</li><li>Drag races</li><li>Track days</li><li>Offroad buggy</li></ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    async function postApply(payload){
+      const res = await fetch('/.netlify/functions/assign', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      return res;
+    }
+
+    document.getElementById('applyForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const ig = document.getElementById('ig').value.trim();
+      const car_model = document.getElementById('car_model').value.trim();
+      const car_color = document.getElementById('car_color').value.trim();
+      const req = document.getElementById('req_num').value.trim();
+      const sponsor = document.getElementById('sponsor').value.trim();
+      const agree = document.getElementById('agree').checked;
+      const result = document.getElementById('result');
+
+      if(!ig||!car_model||!sponsor){ result.textContent='Fill required fields'; return;}
+      if(!agree){ result.textContent='You must agree to rules'; return; }
+
+      const payload = { instagram: ig, car_model, car_color, requested_number: req?Number(req):null, sponsor };
+      result.textContent = 'Submitting...';
+      const res = await postApply(payload);
+      if (res.status === 200){
+        const json = await res.json();
+        result.innerHTML = `Confirmed — number: <strong>${json.assigned_number}</strong><br/>Confirmation: <strong>${json.confirmation_code}</strong><div class="small">Send a picture of your car & number to <strong>@cpmnews</strong>.</div>`;
+      } else if (res.status === 409) {
+        const j = await res.json().catch(()=>null);
+        result.textContent = j?.error || 'Number not available';
+      } else {
+        const txt = await res.text();
+        result.textContent = `Error: ${txt}`;
+      }
+    });
+
+    // quick check number button (not authoritative)
+    document.getElementById('checkNum').addEventListener('click', ()=> {
+      const val = document.getElementById('req_num').value.trim();
+      if(!val) return alert('Enter a number to check');
+      if(Number(val)===1||Number(val)===63) return alert('Reserved');
+      alert('Client-side check cannot guarantee availability — final check happens on server');
+    });
+  </script>
+</body></html>

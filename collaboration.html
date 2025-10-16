@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Custom Brush | Official Site</title>
+  <link rel="stylesheet" href="gumball3000cpm.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Custom Brush — luxury tuner-inspired designs for Car Parking Multiplayer.">
+  <meta property="og:title" content="Custom Brush — New Drop Incoming">
+  <meta property="og:description" content="Six bespoke designs. Join the drop.">
+  <meta property="og:image" content="images/og.jpg">
+</head>
+<body>
+
+  <!-- Navbar transparent over hero -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="#" class="brand">ㄷㄷㄷ</a>
+    </div>
+
+    <!-- centered panel with ccc,f1 logo   and count down-->
+    <div class="race-ticker" aria-live="polite">
+      <img src="images/gum.png" alt="F1" class="race-logo" />
+      <div class="race-count">
+        <span class="race-name" id="raceName">Next: Italian GP</span>
+        <span class="race-ctdn" id="raceCountdown">--d --h --m --s</span>
+      </div>
+      <img src="images/ccc.png" alt="Ferrari" class="race-logo" />
+    </div>
+
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="gumball3000cpm.html">Home</a></li>
+      <li><a href="application.html">Application</a></li>
+      <li><a href="collaboration.html">Collab</a></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </nav>
+
+  
+ 
+<section class="about-section">
+  <div class="about-image">
+    <div class="gradient-overlay"></div>
+    <div class="about-content">
+      <div class="rank-badge">#3<br><span>2025</span></div>
+      <div class="about-text">
+        <h2>Collaboration</h2>
+        <p class="listeners">Become a part</p>
+        <div class="collab-banner">
+  
+  <ul class="collab-details">
+    <li><strong>Requirements:</strong> 2,000+ followers • Skill in car design, video, or photography</li>
+    <li><strong>Rules:</strong> Must share all posts by host</li>
+    <li><strong>Benefits:</strong>
+      <ul>
+        <li>• Your @username featured on our cars</li>
+        <li>• Tagged in every post with your service</li>
+        <li>• Followed and promoted by our members</li>
+        <li>• Sticker on our website</li>
+      </ul>
+    </li>
+  </ul>
+
+  <a href="https://instagram.com/cpmnews" target="_blank" class="insta-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Icon">
+    Message
+  </a>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 kustenbrauche. Not affiliated with any manufacturer. For entertainment/creative purposes.</p>
+  </footer>
+
+  <!-- MODAL: Ticket / Notifications -->
+  <dialog id="ticketModal" class="modal">
+    <form id="ticketForm" method="dialog" class="modal-card">
+      <button type="button" class="modal-close" aria-label="Close" id="closeModal">✕</button>
+      <h3 id="modalTitle">Get Updates</h3>
+      <p class="modal-sub">Join the update list for <span id="eventName">Selected Event</span>.</p>
+
+      <label class="field">
+        <span>Instagram handle</span>
+        <input type="text" id="igHandle" name="igHandle" placeholder="@yourname" required>
+      </label>
+
+      <div class="checks">
+        <label><input type="checkbox" id="chkSupport" required> I support the drivers</label>
+        <label><input type="checkbox" id="chkFollow" required> I follow <strong>@cpmnews_</strong></label>
+      </div>
+
+      <div class="broadcast">
+        <span>Broadcast channel:</span>
+        <a id="broadcastLink" href="https://instagram.com/your-broadcast-channel" target="_blank" rel="noopener">Join here</a>
+      </div>
+
+      <button type="submit" class="primary">Submit</button>
+      <p class="thankyou" id="thankYou" hidden>Thank you! You’re on the list — watch the channel for updates.</p>
+    </form>
+  </dialog>
+
+  <script src="gumball3000cpm.js"></script>
+</body>
+</html>

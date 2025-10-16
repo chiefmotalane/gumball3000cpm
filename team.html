@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Custom Brush | Official Site</title>
+  <link rel="stylesheet" href="gumball3000cpm.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Custom Brush — luxury tuner-inspired designs for Car Parking Multiplayer.">
+  <meta property="og:title" content="Custom Brush — New Drop Incoming">
+  <meta property="og:description" content="Six bespoke designs. Join the drop.">
+  <meta property="og:image" content="images/og.jpg">
+</head>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const followButtons = document.querySelectorAll('.follow-btn');
+
+  followButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const url = button.dataset.url; // cleaner way to get data-url
+      if (url) {
+        window.open(url, '_blank'); // opens in new tab
+      } else {
+        console.error('No URL set for this button');
+      }
+    });
+  });
+});
+</script>
+
+<body>
+
+  <!-- Navbar transparent over hero -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="#" class="brand">ㄷㄷㄷ</a>
+    </div>
+
+    <!-- centered panel with ccc,f1 logo   and count down-->
+    <div class="race-ticker" aria-live="polite">
+      <img src="images/gum.png" alt="F1" class="race-logo" />
+      <div class="race-count">
+        <span class="race-name" id="raceName">Next: Italian GP</span>
+        <span class="race-ctdn" id="raceCountdown">--d --h --m --s</span>
+      </div>
+      <img src="images/ccc.png" alt="Ferrari" class="race-logo" />
+    </div>
+
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="gumball3000cpm.html">Home</a></li>
+      <li><a href="application.html">Application</a></li>
+      <li><a href="collaboration.html">Collab</a></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </nav>
+
+  
+ 
+<section class="about-section">
+  <div class="about-image">
+    <div class="gradient-overlay"></div>
+    <div class="about-content">
+      <div class="rank-badge">#3<br><span>2025</span></div>
+      <div class="about-text">
+        <h2>About</h2>
+        <p class="listeners">Gumball30000 CPM</p>
+        <p class="description">
+          Gumball3000CPM was founded by cpmcoastcustoms and sand3_ce in 2023, bringing the spirit of the legendary Gumball Rally to Kappa King Multiplayer.
+
+This year marks our third anniversary, celebrating years of passion, design, and innovation. Without these two, this event wouldn’t exist — it takes deep research, creative planning, and consistent dedication to keep the experience alive for racers and fans alike.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="insta-profile"> 
+  <img src="images/cpmcoast.webp" alt="Profile picture" class="profile-pic">
+
+  <section class="info">
+    <section class="name-row">
+      <h2>cpmcoastcustoms</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="Verified" class="verified">
+    </section>
+
+    <section class="details">
+      <strong>Rank:</strong>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo" class="insta-logo">
+       
+      <strong>ID:</strong> RJ205014
+    </section>
+
+    <button class="follow-btn" data-url="https://www.instagram.com/cpmcoastcustoms">Follow</button>
+  </section>
+</section>
+
+<section class="insta-profile">
+  <img src="images/sand.webp" alt="Profile picture" class="profile-pic">
+
+  <section class="info">
+    <section class="name-row">
+      <h2>sand3_ce</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="Verified" class="verified">
+    </section>
+
+    <section class="details">
+      <strong>Rank:</strong>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo" class="insta-logo">
+        
+      <strong>ID:</strong> SAND3
+    </section>
+
+    <button class="follow-btn" data-url="https://www.instagram.com/sand3_ce">Follow</button>
+  </section>
+</section>
+
+
+
+
+
+  <script src="gumball3000cpm.js"></script>
+</body>
+</html>
