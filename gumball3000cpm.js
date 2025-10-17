@@ -66,7 +66,7 @@ document.querySelectorAll('.learn-more').forEach(btn => {
     const title = btn.previousElementSibling.textContent.trim();
 
     if (title === 'Apply') {
-      window.location.href = 'application.html';
+      window.location.href = 'applications.html';
     } else if (title === 'Collaboration') {
       window.location.href = 'collaboration.html';
     } else if (title === 'Meet the team') {
