@@ -13,7 +13,7 @@ const raceCountdownEl = document.getElementById('raceCountdown');
 const nextRace = {
   name: 'Gumball3000',
 // countdown
-  when: '2025-10-26T20:30:00'
+  when: '2026-10-26T20:30:00'
 };
 raceNameEl.textContent = `Next: ${nextRace.name}`;
 startCountdown(new Date(nextRace.when).getTime(), raceCountdownEl);
