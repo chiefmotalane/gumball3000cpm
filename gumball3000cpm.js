@@ -5,7 +5,7 @@ document.querySelector('.nav-toggle').addEventListener('click', () => {
 });
 
 /* ====== COUNTDOWNS ====== */
-// 1) Navbar F1 next race (center)
+// 1) Navbar F1 event (center)
 const raceNameEl = document.getElementById('raceName');
 const raceCountdownEl = document.getElementById('raceCountdown');
 
@@ -13,13 +13,13 @@ const raceCountdownEl = document.getElementById('raceCountdown');
 const nextRace = {
   name: 'Gumball3000',
 // countdown
-  when: '2026-10-26T20:30:00'
+  when: '2026-07-05T20:30:00'
 };
 raceNameEl.textContent = `Next: ${nextRace.name}`;
 startCountdown(new Date(nextRace.when).getTime(), raceCountdownEl);
 
 //Drop countdown
-const dropDate = '2025-09-12T18:00:00'; // droping time
+const dropDate = '2026-07-05T18:00'; // droping time
 startCountdown(new Date(dropDate).getTime(), document.getElementById('dropCountdown'));
 
 function startCountdown(targetMs, el) {
