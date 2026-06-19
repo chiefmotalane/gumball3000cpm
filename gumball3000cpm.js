@@ -107,3 +107,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 200);
 });
 
+const menuToggle = document.getElementById('menu-toggle');
+const menuOverlay = document.getElementById('menuOverlay');
+const closeBtn = document.querySelector('.close-btn');
+
+menuToggle.addEventListener('click', () => {
+  menuOverlay.style.display = 'flex';
+});
+
+closeBtn.addEventListener('click', () => {
+  menuOverlay.style.display = 'none';
+});
