@@ -36,29 +36,32 @@ function startCountdown(targetMs, el) {
 }
 
 // Events cards
-const strip = document.getElementById('eventStrip');
-let autoScroll;
-function startAutoScroll() {
-  stopAutoScroll();
-  autoScroll = setInterval(() => {
-    strip.scrollBy({ left: 300, behavior: 'smooth' });
-    // loop back when near end
-    if (strip.scrollLeft + strip.clientWidth + 10 >= strip.scrollWidth) {
-      strip.scrollTo({ left: 0, behavior: 'smooth' });
+const strip = document.getElementById("eventStrip");
+
+strip.innerHTML += strip.innerHTML;
+
+let speed = 2;
+let animationId;
+
+function animate() {
+    strip.scrollLeft += speed;
+
+    if (strip.scrollLeft >= strip.scrollWidth / 2) {
+        strip.scrollLeft = 0;
     }
-  }, 2000); // 2 sec
+
+    animationId = requestAnimationFrame(animate);
 }
-function stopAutoScroll(){ if (autoScroll) clearInterval(autoScroll); }
-startAutoScroll();
 
-// pause when user interacts
-['pointerdown','wheel','touchstart','mouseenter','focusin'].forEach(evt => {
-  strip.addEventListener(evt, stopAutoScroll, { passive: true });
-});
-['mouseleave','touchend','focusout'].forEach(evt => {
-  strip.addEventListener(evt, startAutoScroll, { passive: true });
+animate();
+
+strip.addEventListener("mouseenter", () => {
+    cancelAnimationFrame(animationId);
 });
 
+strip.addEventListener("mouseleave", () => {
+    animate();
+});
 
 // Learn More button redirects
 document.querySelectorAll('.learn-more').forEach(btn => {
