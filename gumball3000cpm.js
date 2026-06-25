@@ -110,14 +110,45 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 200);
 });
 
-const menuToggle = document.getElementById('menu-toggle');
-const menuOverlay = document.getElementById('menuOverlay');
-const closeBtn = document.querySelector('.close-btn');
 
-menuToggle.addEventListener('click', () => {
-  menuOverlay.style.display = 'flex';
+const overlay = document.getElementById("menuOverlay");
+
+const openBtn = document.getElementById("menu-toggle");
+
+const closeBtn = document.getElementById("close-btn");
+
+
+
+openBtn.addEventListener("click", function(){
+
+    overlay.classList.add("open");
+
+    document.body.style.overflow = "hidden";
+
 });
 
-closeBtn.addEventListener('click', () => {
-  menuOverlay.style.display = 'none';
+
+
+closeBtn.addEventListener("click", function(){
+
+    overlay.classList.remove("open");
+
+    document.body.style.overflow = "";
+
+});
+
+
+
+// Close when clicking blurred background
+
+overlay.addEventListener("click", function(e){
+
+    if(e.target === overlay){
+
+        overlay.classList.remove("open");
+
+        document.body.style.overflow = "";
+
+    }
+
 });

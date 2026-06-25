@@ -25,7 +25,7 @@
 
 :root {
   --font-display: "Font Display", "Didot", Georgia, serif;
-  --font-body: "Font Body", Inter, Arial, sans-serif;
+  --font-body: "Font Text", Inter, Arial, sans-serif;
   --font-mono: "Font Monospace", ui-monospace, Menlo, monospace;
   /* Font Sizes */
   --font-hero: 18rem;   /* 288px */
@@ -385,6 +385,7 @@ h2 {
   font-size: var(--font-section);
   line-height: var(--lh-display);
   letter-spacing: var(--track-mono-wide);
+  
 }
 #events{background-color: #000;}
 .section-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
@@ -585,4 +586,148 @@ button.learn-more::after {
   height: 0.5px;
   background: #fff;
   margin-top: 4px;
+}
+
+
+/* ===========================
+   MENU OVERLAY
+=========================== */
+
+.menu-overlay{
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 7px;
+
+    background: rgba(0, 0, 0, 0.028);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity .35s ease,
+        visibility .35s ease;
+
+    z-index: 999;
+}
+
+.menu-overlay.open{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* ===========================
+   FLOATING MENU
+=========================== */
+
+.side-menu-container{
+
+    width: 100%;
+    max-width: 1700px;
+
+    margin-top: 7px;
+
+    background: var(--color-white);
+    border-radius: 12px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 20px;
+
+    padding: 20px;
+    
+    max-height: calc(100vh - 23px);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transform: translateY(-20px);
+
+    transition: transform .35s ease;
+
+}
+
+/* Slide in */
+
+.menu-overlay.open .side-menu-container{
+    transform: translateY(0);
+}
+
+/* Optional scrollbar */
+
+.side-menu-container::-webkit-scrollbar{
+    width: 2px;
+}
+
+.side-menu-container::-webkit-scrollbar-thumb{
+    background:var(--color-transparent);
+    border-radius:999px;
+}
+button.close-menu{
+  background: var(--color-white);
+  border: none;
+  font-size: var(--font-lead);
+}
+button.close-menu:hover{
+color: #999999ad;
+}
+button.side-menu-button {
+  font-family: var(--font-display);
+  font-size: var(--font-lead);
+  color: #999999;
+  background: var(--accent);
+  border: none;
+  text-transform: none;
+}
+button.side-menu-button:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+button.side-menu-button:active {
+  opacity: 0.7;
+}
+.side-menu-list{
+  display:flex;
+  flex-direction:column;
+  inset: 0;
+  align-items: flex-start;
+  gap: 10px;
+}
+.side-menu-title{
+  font-family: var(--font-mono);
+  line-height: var(--lh-micro);
+  font-size: 13px;
+}
+
+.side-menu-list img {
+  width:100%;
+    aspect-ratio:2.29/1;
+
+    object-fit:cover;
+  border-radius: 10px;
+  
+}
+
+@media (min-width: 768px) {
+
+    .side-menu-container {
+        width: 74vw;
+        max-width: none;
+
+        margin-left: 0;
+        margin-right: auto;
+
+        border-radius: 12px;
+
+    }
+
 }
