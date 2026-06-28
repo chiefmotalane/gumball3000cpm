@@ -152,3 +152,26 @@ overlay.addEventListener("click", function(e){
     }
 
 });
+
+
+/*notification overlay*/
+
+const notification = document.querySelector(".overlay-notification");
+
+setTimeout(() => {
+    notification.classList.add("show");
+}, 3000);
+
+document.querySelector(".close-notification")
+.addEventListener("click", () => {
+
+    notification.classList.remove("show");
+
+});
+
+document.querySelector(".close-notification")
+.addEventListener("click", () => {
+
+    notification.classList.remove("show");
+
+});
