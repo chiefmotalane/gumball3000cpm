@@ -22,8 +22,16 @@
   font-style: normal;
   font-display: block;
 }
-
+@font-face {
+    font-family: 'Gustavo';
+    src: url(fonts/gustavo-medium-webfont.88fe21a8.woff2) format("woff2"),
+     url(fonts/gustavo-medium-webfont.ff3185f4.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 :root {
+  --font-hero: "Gustavo" sans-serif;
   --font-display: "Font Display", "Didot", Georgia, serif;
   --font-body: "Font Text",  serif;
   --font-mono: "Font Monospace", ui-monospace, Menlo, monospace;
@@ -31,6 +39,7 @@
   --font-hero: 18rem;   /* 288px */
   --font-mid-display: 3.75rem; /* 60px */
   --font-section: 2.25rem; /* 36px */
+  --font-hero-a:1.625rem; /* 26px */
   --font-lead: 1.25rem; /* 20px */
   --font-body: 1rem;    /* 16px */
   --font-compact: 0.88rem; /* 14px */
@@ -158,7 +167,7 @@ html,body{
   padding:0;
 }
 
-/* Center dynamic island in navbar */
+/* Center dynamic island in navbar*/
 .dynamic-island{
   position:absolute;
   left:50%;
@@ -171,8 +180,8 @@ html,body{
   color: var(--color-white);
   padding:8px 12px;
   border-radius:999px;
-  background:var(--color-black);
-  backdrop-filter:blur(4px);
+  background: rgba(18, 17, 17, 0.596);
+  backdrop-filter:blur(3px);
 }
 @media (max-width: var(--bp-mobile)) {
   .dynamic-island {
@@ -181,7 +190,7 @@ html,body{
      flex-wrap: wrap;
   }
 }
-.nav-event-logo{height:26px;width:auto;object-fit:contain;opacity:.95}
+.nav-event-logo{display:block;height:26px;width:auto;object-fit:contain;opacity:.95}
 .nav-event-count{font-family:var(--font-body);display:flex;flex-direction:column;align-items:center}
 .nav-event-name{font-family: var(--font-mono);font-size:var(--font-micro);letter-spacing:.5px;opacity:.9}
 .nav-event-ctdn{font-family: var(--font-mono);font-weight:400;font-size:var(--font-micro);letter-spacing:2px}
@@ -334,6 +343,35 @@ img {
 
     height:auto;
 }
+.hero-text-container{
+    display:relative;
+}
+.hero-text p{
+  position: absolute;
+  font-size: 1.65rem;
+  top: 13%;
+  left: 5%;
+  font-family: Gustavo, sans-serif;
+  font-display: swap;
+  font-style: italic;
+  color: var(--color-white);
+  text-transform: uppercase;
+  z-index: 2;
+}
+.hero-textq p{
+  position: absolute;
+  font-size: 2rem;
+  
+  top: 15%;
+  left:20%;
+  font-family: Gustavo, sans-serif;
+  font-display: swap;
+  font-style: italic;
+  color: var(--color-white);
+  text-transform: uppercase;
+  z-index: 2;
+}
+
 
 .hero-caption{
   font-family: var(--font-mono);
@@ -345,13 +383,9 @@ img {
 
     color:white;
 
-    font-size:clamp(
-        var(--font-micro),
-        var(--font-lead),
-        var(--font-display)
-    );
+    font-size:var(--font-micro);
 
-    letter-spacing:0.35em;
+    letter-spacing: 1.4px;;
 
     text-transform:uppercase;
 }
