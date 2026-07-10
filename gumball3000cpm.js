@@ -1,3 +1,24 @@
+ // Initialize a new Lenis instance for smooth scrolling
+const lenis = new Lenis();
+
+// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+lenis.on('scroll', ScrollTrigger.update);
+
+// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+// This ensures Lenis's smooth scroll animation updates on each GSAP tick
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+});
+
+// Disable lag smoothing in GSAP to prevent any delay in scroll animations
+gsap.ticker.lagSmoothing(0);
+
+ 
+ 
+
+
+
+
 /* ====== NAV MOBILE ====== */
 const nav = document.querySelector('.navbar');
 document.querySelector('.nav-toggle').addEventListener('click', () => {
@@ -13,13 +34,13 @@ const raceCountdownEl = document.getElementById('raceCountdown');
 const nextRace = {
   name: 'Gumball3000',
 // countdown
-  when: '2026-07-05T20:30:00'
+  when: '2026-08-05T20:30:00'
 };
-raceNameEl.textContent = `Next: ${nextRace.name}`;
+raceNameEl.textContent = `${nextRace.name}|CPM`;
 startCountdown(new Date(nextRace.when).getTime(), raceCountdownEl);
 
 //Drop countdown
-const dropDate = '2026-07-05T18:00'; // droping time
+const dropDate = '2026-08-05T18:00'; // droping time
 startCountdown(new Date(dropDate).getTime(), document.getElementById('dropCountdown'));
 
 function startCountdown(targetMs, el) {
@@ -175,3 +196,71 @@ document.querySelector(".close-notification")
     notification.classList.remove("show");
 
 });
+/* Horizontal Scroll */
+
+const section = document.querySelector(".pj");
+const sticky = document.querySelector(".projects-container");
+const track = document.querySelector(".project-inner");
+
+function horizontalScroll() {
+
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const viewport = window.innerHeight;
+    const scroll = window.scrollY;
+
+    const maxTranslate =
+        track.scrollWidth - window.innerWidth;
+
+    /* ---------------------------------------
+       PHASE 1
+       Before sticky
+    ----------------------------------------*/
+
+    const approachDistance = 300; // px before sticky begins
+
+    let approach =
+        (scroll - (sectionTop - approachDistance)) / approachDistance;
+
+    approach = Math.max(0, Math.min(approach, 1));
+
+    // Move only 10% before sticky
+    const approachMove =
+        approach * (maxTranslate * 0.10);
+
+    /* ---------------------------------------
+       PHASE 2
+       Sticky Horizontal Scroll
+    ----------------------------------------*/
+
+    const progress =
+        scroll - sectionTop;
+
+    const maxScroll =
+        sectionHeight - viewport;
+
+    let percent =
+        progress / maxScroll;
+
+    percent = Math.max(0, Math.min(percent, 1));
+
+    // Remaining 90%
+    const horizontalMove =
+        percent * (maxTranslate * 0.90);
+
+    /* ---------------------------------------
+       FINAL
+    ----------------------------------------*/
+
+    const move =
+        approachMove + horizontalMove;
+
+    track.style.transform =
+        `translate3d(${-move}px,0,0)`;
+
+}
+
+window.addEventListener("scroll", horizontalScroll);
+window.addEventListener("resize", horizontalScroll);
+
+horizontalScroll();
