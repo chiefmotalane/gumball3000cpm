@@ -56,33 +56,42 @@ function startCountdown(targetMs, el) {
   }, 1000);
 }
 
-// Events cards
-const strip = document.getElementById("eventStrip");
 
-strip.innerHTML += strip.innerHTML;
+//cards scrolling
+const scrollStrip = document.getElementById("scrollCard");
 
-let speed = 2;
-let animationId;
+scrollStrip.innerHTML += scrollStrip.innerHTML;
+let scrollSpeed = 3;
+let animId;
 
-function animate() {
-    strip.scrollLeft += speed;
+function animate(){
+  scrollStrip.scrollLeft += scrollSpeed;
+  if(scrollStrip.scrollLeft > scrollStrip.scrollWidth/2 ){
+    scrollStrip.scrollLeft =0;
+  }
+  animId = requestAnimationFrame(animate)
 
-    if (strip.scrollLeft >= strip.scrollWidth / 2) {
-        strip.scrollLeft = 0;
-    }
-
-    animationId = requestAnimationFrame(animate);
 }
 
 animate();
 
-strip.addEventListener("mouseenter", () => {
-    cancelAnimationFrame(animationId);
+scrollStrip.addEventListener("mouseenter", () => {
+  cancelAnimationFrame(animId);
 });
 
-strip.addEventListener("mouseleave", () => {
-    animate();
+scrollStrip.addEventListener("mouseleave", () =>{
+  animate();
 });
+
+
+
+
+
+
+
+
+
+
 
 // Learn More button redirects
 document.querySelectorAll('.learn-more').forEach(btn => {
@@ -196,6 +205,9 @@ document.querySelector(".close-notification")
     notification.classList.remove("show");
 
 });
+
+
+
 /* Horizontal Scroll */
 
 const section = document.querySelector(".pj");
@@ -264,3 +276,4 @@ window.addEventListener("scroll", horizontalScroll);
 window.addEventListener("resize", horizontalScroll);
 
 horizontalScroll();
+
