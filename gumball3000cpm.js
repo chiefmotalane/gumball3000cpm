@@ -13,8 +13,33 @@ gsap.ticker.add((time) => {
 // Disable lag smoothing in GSAP to prevent any delay in scroll animations
 gsap.ticker.lagSmoothing(0);
 
- 
- 
+gsap.registerPlugin(ScrollTrigger) ;
+gsap.registerPlugin(SplitText);
+let split = SplitText.create(".missionPara",{
+  type: "lines"
+});
+
+gsap.from(split.lines, {
+  scrollTrigger: {
+    trigger: ".missionPara",
+    toggleActions : "restart pause resume play"
+  },
+  y:100,
+  autoAlpha:0,
+  stagger:0.08
+})
+
+gsap.utils.toArray(".panel").forEach((panel, i)=>{
+ScrollTrigger.create({
+trigger: panel,
+start: "left left",
+end: "right left",
+pin: true,
+pinSpacing: false})
+
+
+})
+
 
 
 
