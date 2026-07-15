@@ -367,9 +367,71 @@ img {
   
   position: absolute;
   color: var(--color-white);
+  top: 45%;
+  left: 60%;
+  z-index: 5;
+}
+.hero-textn{
+  position: absolute;
+  font-size: .7rem;
+  top: 46%;
+  left: 63%;
+  font-family: Gustavo, sans-serif;
+  font-display: swap;
+  font-style: italic;
+  color: var(--color-white);
+  text-transform: uppercase;
+  z-index: 2;
+}
+.hero-textm{
+  position: absolute;
+  font-size: .8rem;
+  top: 49%;
+  left: 63%;
+  font-family: Gustavo, sans-serif;
+  font-display: swap;
+  font-style: italic;
+  color: rgb(255, 159, 23);
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+@media (max-width: 640px) {
+  .hero-texte{
+  
+  position: absolute;
+  color: var(--color-white);
   top: 55%;
   left: 60%;
   z-index: 5;
+}
+
+.hero-textn{
+  position: absolute;
+  font-size: .5rem;
+  top: 55%;
+  left: 63%;
+  font-family: Gustavo, sans-serif;
+  font-display: swap;
+  font-style: italic;
+  font-weight: 200 !important;
+  color: var(--color-white);
+  text-transform: uppercase;
+  z-index: 2;
+}
+.hero-textm{
+  position: absolute;
+  font-size: .5rem;
+  top: 57%;
+  left: 63%;
+  font-family: Gustavo, sans-serif;
+  font-display: swap;
+  font-style: italic;
+  color: rgb(255, 159, 23);
+  text-transform: uppercase;
+  z-index: 2;
+}
+  
 }
 .primary-outline path {
   
@@ -400,30 +462,7 @@ img {
 @media (max-width: 640px) {
   
 }
-.hero-textn{
-  position: absolute;
-  font-size: .4rem;
-  top: 55%;
-  left: 63%;
-  font-family: Gustavo, sans-serif;
-  font-display: swap;
-  font-style: italic;
-  color: var(--color-white);
-  text-transform: uppercase;
-  z-index: 2;
-}
-.hero-textm{
-  position: absolute;
-  font-size: .5rem;
-  top: 57%;
-  left: 63%;
-  font-family: Gustavo, sans-serif;
-  font-display: swap;
-  font-style: italic;
-  color: rgb(255, 159, 23);
-  text-transform: uppercase;
-  z-index: 2;
-}
+
 
 
 .hero-caption{
@@ -1082,10 +1121,7 @@ button.side-menu-button:active {
    KUSTENBRAUCHE SECTION
 =========================== */
 
-.kusten{
-    margin:20px;
-    margin-top:20px;
-}
+
 
 .kbh{
     display:flex;
@@ -1101,8 +1137,7 @@ button.side-menu-button:active {
 }
 
 .kbh-t-p{
-    padding-left:1.5rem;
-    padding-right:1.5rem;
+    padding: 0;
     font-family:var(--font-mono);
     font-size:var(--font-compact);
     line-height:var(--lh-display);
@@ -1166,7 +1201,7 @@ button.side-menu-button:active {
 
     background:#171717;
 
-    padding:40px;
+    padding: 20px;
 
     border-top-right-radius:8px;
     border-bottom-right-radius:8px;
@@ -1245,7 +1280,7 @@ button.side-menu-button:active {
 
         width:100%;
 
-        padding: 28px;px;
+        padding: 28px;
 
         border-top-right-radius:0;
         border-bottom-left-radius:8px;
@@ -1265,6 +1300,7 @@ button.side-menu-button:active {
 .footer-grid-column{
   flex: 1;
   padding: 20px;
+  
   flex-grow: 1;
 }
 

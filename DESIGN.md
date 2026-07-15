@@ -85,3 +85,73 @@ object-fit:cover
 
 
 
+.hero-texte{
+  
+  position: absolute;
+  color: var(--color-white);
+  top: 55%;
+  left: 60%;
+  z-index: 5;
+}
+
+.hero-textn{
+  position: absolute;
+  font-size: .4rem;
+  top: 55%;
+  left: 63%;
+  font-family: Gustavo, sans-serif;
+  font-display: swap;
+  font-style: italic;
+  color: var(--color-white);
+  text-transform: uppercase;
+  z-index: 2;
+}
+.hero-textm{
+  position: absolute;
+  font-size: .5rem;
+  top: 57%;
+  left: 63%;
+  font-family: Gustavo, sans-serif;
+  font-display: swap;
+  font-style: italic;
+  color: rgb(255, 159, 23);
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+@media (max-width: 640px) {
+  .hero-texte{
+  
+  position: absolute;
+  color: var(--color-white);
+  top: 55%;
+  left: 60%;
+  z-index: 5;
+}
+
+.hero-textn{
+  position: absolute;
+  font-size: .4rem;
+  top: 55%;
+  left: 63%;
+  font-family: Gustavo, sans-serif;
+  font-display: swap;
+  font-style: italic;
+  color: var(--color-white);
+  text-transform: uppercase;
+  z-index: 2;
+}
+.hero-textm{
+  position: absolute;
+  font-size: .5rem;
+  top: 57%;
+  left: 63%;
+  font-family: Gustavo, sans-serif;
+  font-display: swap;
+  font-style: italic;
+  color: rgb(255, 159, 23);
+  text-transform: uppercase;
+  z-index: 2;
+}
+  
+}
