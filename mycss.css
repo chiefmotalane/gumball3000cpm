@@ -942,7 +942,9 @@ button.learn-more::after {
     background:var(--color-transparent);
     border-radius:999px;
 }
-
+.side-menu-container{
+    overscroll-behavior: contain;
+}
 .side-menu-arrow{
 margin-left: .375rem;
 }

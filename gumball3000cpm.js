@@ -1,5 +1,7 @@
  // Initialize a new Lenis instance for smooth scrolling
-const lenis = new Lenis();
+const lenis = new Lenis({
+    prevent: (node) => node.closest(".side-menu-container")
+});
 
 // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
 lenis.on('scroll', ScrollTrigger.update);
@@ -165,50 +167,61 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 200);
 });
 
-
+let currentScroll = 0;
 const overlay = document.getElementById("menuOverlay");
 
 const openBtn = document.getElementById("menu-toggle");
 
 const closeBtn = document.getElementById("close-btn");
 
+const menu = document.querySelector(".side-menu-container");
 
 
 openBtn.addEventListener("click", function(){
+
+    currentScroll = window.scrollY;
 
     overlay.classList.add("open");
 
     document.body.style.overflow = "hidden";
 
-});
+    lenis.stop();
 
+});
 
 
 closeBtn.addEventListener("click", function(){
 
     overlay.classList.remove("open");
 
+    menu.scrollTop = 0;
+
     document.body.style.overflow = "";
+
+    lenis.start();
 
 });
 
 
 
-// Close when clicking blurred background
-
+// Close when clicking blurred
 overlay.addEventListener("click", function(e){
 
     if(e.target === overlay){
 
         overlay.classList.remove("open");
 
+        menu.scrollTop = 0;
+
         document.body.style.overflow = "";
+
+        lenis.start();
+
+        window.scrollTo(0, currentScroll);
 
     }
 
 });
-
-
 /*notification overlay*/
 
 const notification = document.querySelector(".overlay-notification");
