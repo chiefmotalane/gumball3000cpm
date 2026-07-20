@@ -1569,3 +1569,27 @@ linear-gradient(#111,#f7f5f51e);
   text-transform: lowercase;
   
 }
+
+.shop-collection-h{
+  font-family: var(--font-display);
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+.shop-collection-inner{
+  background: var(--color-white);
+  border-radius: 10px;
+}
+.shop-collection-wrapper{
+  padding: 20px;
+}
+
+.shop-collection-img{
+  width:60%;
+    height:40%;
+    display:block;
+    object-fit:cover;
+
+    border-top-left-radius:8px;
+    border-bottom-left-radius:8px;
+}
