@@ -1569,27 +1569,104 @@ linear-gradient(#111,#f7f5f51e);
   text-transform: lowercase;
   
 }
-
+/*store styles*/
 .shop-collection-h{
   font-family: var(--font-display);
   color: var(--color-white);
   font-weight: 500;
+  padding-left: 15px;
 }
 
 .shop-collection-inner{
   background: var(--color-white);
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 45vh;
+  width: 60vw;
+  position: relative;
+  
 }
 .shop-collection-wrapper{
   padding: 20px;
 }
 
 .shop-collection-img{
-  width:60%;
-    height:40%;
+  width:100%;
+    height:80%;
     display:block;
     object-fit:cover;
-
+    border-top-right-radius:8px;
     border-top-left-radius:8px;
-    border-bottom-left-radius:8px;
+}.shop-collection-container{
+  
+
+}
+
+
+
+.shop-collection-inner article {
+  position: absolute;
+  top: 70%;             
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: 5;              
+  color: #000000;            
+  padding: 8px 12px;
+  pointer-events: none;    
+  
+}
+
+.shop-collection-container-text{
+ 
+}
+
+.shop-collection-container-button{
+   width: 120px !important;
+  height: 28px;
+   font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: var(--lh-micro);
+  font-weight: 500;
+  color: var(--color-white);
+  
+  text-transform: uppercase;
+  letter-spacing: var(--track-mono-tight);
+  color: var(--color-black);
+  background: #ededed;
+  border: var(--color-white);
+  border-radius: 36pt;    /* full pill */
+  padding-top: 5px;
+  transition: all var(--transition-quiet);
+}
+.shop-collection-inner-tittle{
+  padding-left: 8px;
+  padding-top: 8px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: var(--font-micro);color: #535450;
+}
+
+.shop-collection-inner--details{
+  padding: 8px;
+}
+
+.shop-collection-inner--details-product{
+  font-family: var(--font-display);
+  font-weight: 200 !important;
+}
+
+.shop-collection-inner--details-price{
+  color: rgb(0, 102, 255);
+  padding-left: 165px;
+}
+.shop-collection-inner-pp{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.shop-collection-container-logo{
+  top: 0%;
+  height: 25px;
+  border-radius: 25px;
 }
