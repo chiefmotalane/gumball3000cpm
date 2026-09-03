@@ -106,7 +106,8 @@ html,body{
   padding:0;
   scroll-behavior:auto;
   background:#000000;
-color: whi;}
+  overflow-x:hidden;
+color: var(--color-white);}
 
 /* Navbar */
 .navbar{
@@ -706,7 +707,7 @@ h2 {
   font-family: var(--font-mono);
   letter-spacing: 0.5px !important;
   font-size: 9px;
-  height: 35px;
+  height: 39px;
   padding-bottom: 10px;
 }
 .articlee-tittle{
