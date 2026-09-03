@@ -1046,7 +1046,13 @@ button.side-menu-button:active {
 
     z-index: 9999;
 }
-
+@media (max-width: 640px) {
+  .overlay-notification{
+    width: 90%;
+    right: 5%;
+    bottom: 20px;
+  }
+}
 .overlay-notification.show{
     opacity:1;
     visibility:visible;
