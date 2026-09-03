@@ -315,3 +315,19 @@ window.addEventListener("resize", horizontalScroll);
 
 horizontalScroll();
 
+const storeBtn = document.querySelector("#store-btn");
+
+storeBtn.addEventListener("click", () => {
+    window.location.href = "store.html";
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const home = document.getElementById("home");
+
+    home.addEventListener("click", () => {
+      console.log("HOME CLICKED");
+        window.location.href = "index.html";
+    });
+
+});

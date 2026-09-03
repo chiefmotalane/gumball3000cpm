@@ -106,7 +106,6 @@ html,body{
   padding:0;
   scroll-behavior:auto;
   background:#000000;
-  color: var(--color-white);
    overflow-x:clip;
 
 }
@@ -188,6 +187,7 @@ html,body{
   letter-spacing: var(--track-mono-wide);
   color: var(--color-white);
   text-decoration: none;
+  cursor: pointer;
   transition: opacity var(--transition-quiet)
 }
 .brand{font-family: var(--font-mono);
@@ -1152,7 +1152,7 @@ button.side-menu-button:active {
 }
 
 .kbh-t-p{
-    padding: 0;
+    padding: 1.5rem;
     font-family:var(--font-mono);
     font-size:var(--font-compact);
     line-height:var(--lh-display);
