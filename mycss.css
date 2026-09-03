@@ -106,8 +106,10 @@ html,body{
   padding:0;
   scroll-behavior:auto;
   background:#000000;
-  overflow-x:hidden;
-color: var(--color-white);}
+  color: var(--color-white);
+   overflow-x:clip;
+
+}
 
 /* Navbar */
 .navbar{
@@ -1355,6 +1357,7 @@ button.side-menu-button:active {
     width:100%;
     max-width:none;
     margin:auto;
+    overflow-x:hidden;
 }
 .projects p{
   color: var(--color-white);
@@ -1415,13 +1418,7 @@ button.side-menu-button:active {
     display: flex;
 }
 
-.eyebrow-w {
-    grid-column-gap: calc(1.25rem * .5);
-    grid-row-gap: calc(1.25rem * .5);
-    display: flex;
-    flex-direction: column;
-    overflow: clip;
-}
+
 
 .horizontal-item-img-w.is-offt1 {
   width: calc(1vh * 50);
