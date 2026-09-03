@@ -1014,7 +1014,7 @@ button.side-menu-button:active {
 /*notification overlay*/
 
 .overlay-notification{
-  background: rgba(18, 17, 17, 0.787);
+  background: rgba(18, 17, 17, 0.644);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     color: var(--color-white);
@@ -1024,6 +1024,7 @@ button.side-menu-button:active {
     font-family: var(--font-mono);
     padding: 10px;
     gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.349);
     margin: 10px;
     overflow-y: auto;
     overflow-x: hidden;
