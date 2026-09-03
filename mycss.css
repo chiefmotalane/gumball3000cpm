@@ -706,7 +706,7 @@ h2 {
   font-family: var(--font-mono);
   letter-spacing: 0.5px !important;
   font-size: 9px;
-  height: 28px;
+  height: 35px;
   padding-bottom: 10px;
 }
 .articlee-tittle{
@@ -1563,13 +1563,7 @@ linear-gradient(#111,#f7f5f51e);
   color: var(--color-white);
   padding: 20px;
 }
-.missionPara{
-  visibility: visible;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #ebeee0;;
-  text-transform: lowercase;
-  
-}
+
 /*store styles*/
 .shop-collection-h{
   font-family: var(--font-display);
