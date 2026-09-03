@@ -1049,8 +1049,10 @@ button.side-menu-button:active {
 @media (max-width: 640px) {
   .overlay-notification{
     width: 90%;
-    right: 5%;
-    bottom: 20px;
+    
+    right: .75rem;
+    left: .75rem;
+  bottom: .75rem;
   }
 }
 .overlay-notification.show{
